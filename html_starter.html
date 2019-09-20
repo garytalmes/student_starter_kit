@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TITLE GOES HERE</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Load your own css files here -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="typography.css" />
+  </head>
+  
+  <body>
+    <div id="viewport">
+
+      <!-- Here is some sample Bootstrap code -->
+
+      <!-- Always start with a container (see the class name) -->
+      <div class="container">
+
+        <!-- Any columns you have must be in rows, so make one here -->
+        <div class="row">
+
+          <!-- Each column is its own div; each row always gives you 12 columns to work with -->
+          <!-- We have 2 columns here, sized as follows:
+            On xtra small screens, each block spans the width of the screen (12 of 12 columns)
+            On medium screens, the first block spans a little over half the screen (8 of 12 columns); the second a little less than half (4 of 12)
+            On larger screens, each column spans half the screen (6 of 12 columns)
+          -->
+          <div class="col-12 col-sm-8 col-md-6">
+            <p>Content for this column goes here. Inside the div.</p>
+          </div>
+
+          <div class="col-12 col-sm-4 col-md-6">
+            <p>Content for this column goes here. Inside the div.</p>
+          </div>
+        </div>
+
+      </div> <!-- This closes the row -->
+    </div> <!-- This closes the container -->
+
+    <!-- Javascript files needed by Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- If you're running any Javascript in the page, it can go here -->
+    <script type="text/javascript">
+      // Wait until all HTML loads before any jQuery work starts
+      $(document).ready(function(){
+        // Select something and assign a variable to it
+        var viewport = $("#viewport");
+
+        // Add a class to it
+        viewport.attr("class", "fancy");
+
+        // Here's an easier way to add a class
+        viewport.addClass('fancier');
+      });
+    </script>
+
+  </body>
+</html>
