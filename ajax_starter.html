@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ajax Starter File</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="list" class="col-6"></div>
+
+        <div id="details" class="col-6"></div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        // define the url of the api
+        var url = 'http://myapiurl.com/list/?i=action&apikey=12345';
+
+        // Make an ajax call on page load and populate a div
+        $.ajax({
+          method: "GET",
+          url: url
+        })
+        .done(function( resp ) {
+          // Use the variable resp (or whatever) for the response
+          // we receive from the API
+          console.log(resp);
+
+          // Example below of building a DOM element with the response data
+
+          // Create a p tag (or some other tag)
+          var p = $("<p>");
+
+          // If needed: add a class and other attributes to the tag
+          p.addClass('movie');
+
+          // Probably needed: add an attribute to the tag which identifies 
+          // this item so we can look it up again later
+          p.attr('imdbid', resp.imdbID);
+  
+          // Probably needed: add some text into the tag using 
+          // one of the JSON properties
+          p.text(resp.Title);
+  
+          // Probably needed: append the new tag to a 
+          // div (or whatever you want) that's already on the page
+          $("div#list").append(p);
+        });
+
+
+
+
+        // THIS IS THE CORRECT WAY TO DO A CLICK HANDLER ON ANY 
+        // ELEMENTS ADDED DURING AN AJAX PROCESS
+
+        // Notice here that we are trapping clicks on the DOCUMENT itself, then we
+        // tell jQuery to drill down from there and find any tags that have been added
+        // in the process above  Credit: Nolan
+        $(document).on("click","p.movie",function(){
+          // Get the attribute on our tag which identifies the resource we're looking for
+          var id = $(this).attr("imdbid");
+
+          // Make a call to the API for a specific item
+          $.ajax({
+            method: "GET",
+            url: "http://www.omdbapi.com/?i=" + id + "&apikey=trilogy"  
+          })
+          .done(function( resp ) {
+            // resp is the variable name we're using for the response 
+            // object we get back from the API. We can use whatever variable name we want
+            console.log(resp);
+
+            // Take the info you need from the JSON payload and 
+            // add it to another div somewhere
+            $("#details").text(resp.Plot);
+          });
+        });
+    
+      });
+    </script>
+  </body>
+</html>
