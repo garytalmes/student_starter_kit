@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firebase Starter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Load your own css files here -->
+
+  </head>
+  
+  <body>
+    <div id="viewport">
+
+    </div> 
+
+    <!-- Javascript files needed by Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- These tags are needed for firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
+
+    <script type="text/javascript">
+      // Enter your custom firebase config values here
+      var config = {
+        apiKey: "xxxxxxxxxx",
+        authDomain: "xxxxxxxxxxx",
+        databaseURL: "xxxxxxxxxx",
+        projectId: "xxxxxxxxxx",
+        storageBucket: "xxxxxxxxxx",
+        messagingSenderId: "xxxxxxxxxx",
+        appId: "xxxxxxxxxx"
+      };
+
+      // Initialize firebase with the new config info
+      firebase.initializeApp(config);
+
+      // Create a variable to reference the database
+      var database = firebase.database();
+
+      // Start your own business logic here
+
+
+    </script>
+
+  </body>
+</html>
