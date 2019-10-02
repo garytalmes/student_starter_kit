@@ -44,8 +44,24 @@
       // Create a variable to reference the database
       var database = firebase.database();
 
-      // Start your own business logic here
+      // --------- Start your own business logic here ------------------
 
+      // Set new data to the database
+      database.ref().set({
+        // new data object goes here
+      });
+
+      // Tell firebase to do stuff when the database changes
+      database.ref().on("value", function(snapshot) {
+        // snapshot is the variable for the whole database
+        // snapshot.val() holds all the database data based on what's
+        //   in the ref() method above
+      }, function(errorObject) {
+        // If there's an error, firebase provides an errorObject
+        // put whatever error handling logic you want here
+
+        console.log("The read failed: " + errorObject.code);
+      }); 
 
     </script>
 
