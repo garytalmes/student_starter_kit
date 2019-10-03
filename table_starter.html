@@ -7,40 +7,58 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <!-- Load your own css files here -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="typography.css" />
   </head>
   
   <body>
     <div id="viewport">
-
-      <!-- Here is some sample Bootstrap code -->
-
-      <!-- Always start with a container (see the class name) -->
+      
       <div class="container">
-
-        <!-- Any columns you have must be in rows, so make one here -->
         <div class="row">
+          <div class="col-12">
 
-          <!-- Each column is its own div; each row always gives you 12 columns to work with -->
-          <!-- We have 2 columns here, sized as follows:
-            On xtra small screens, each block spans the width of the screen (12 of 12 columns)
-            On medium screens, the first block spans a little over half the screen (8 of 12 columns); the second a little less than half (4 of 12)
-            On larger screens, each column spans half the screen (6 of 12 columns)
-          -->
-          <div class="col-12 col-sm-8 col-md-6">
-            <p>Content for this column goes here. Inside the div.</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                  <th>Column 3</th>
+                  <th>Column 4</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Row 1, Column 1</td>
+                  <td>Row 1, Column 2</td>
+                  <td>Row 1, Column 3</td>
+                  <td>Row 1, Column 4</td>
+                </tr>
+                <tr>
+                  <td>Row 2, Column 1</td>
+                  <td>Row 2, Column 2</td>
+                  <td>Row 2, Column 3</td>
+                  <td>Row 2, Column 4</td>
+                </tr>
+                <tr>
+                  <td>Row 3, Column 1</td>
+                  <td>Row 3, Column 2</td>
+                  <td>Row 3, Column 3</td>
+                  <td>Row 3, Column 4</td>
+                </tr>
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <td colspan="2">Notice how this footer item spans 2 columns.</td>
+                  <td colspan="2">Notice how this footer item spans 2 columns.</td>
+                </tr>
+              </tfoot>
+            </table>
+          
           </div>
+        </div>
+      </div>
 
-          <div class="col-12 col-sm-4 col-md-6">
-            <p>Content for this column goes here. Inside the div.</p>
-          </div>
-
-        </div> <!-- This closes the row -->
-
-      </div> <!-- This closes the container -->
     </div> <!-- This closes the viewport -->
 
     <!-- Javascript files needed by Bootstrap -->
