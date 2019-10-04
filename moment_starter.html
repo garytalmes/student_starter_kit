@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moment Starter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <div id="viewport">
+
+    </div> <!-- This closes the viewport -->
+
+
+
+    <!-- Javascript files needed by Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- If you're running any Javascript in the page, it can go here -->
+    <script type="text/javascript">
+      // Wait until all HTML loads before any jQuery work starts
+      $(document).ready(function(){
+        // Make a variable for now so we can derive other dates from it
+        var now = moment();
+
+        // Let's format today's date (lots of options here)
+        console.log( now.format("MMM DD YYYY") );
+
+        // Let's look at 5 days ago
+        console.log(now.subtract(5, 'days').calendar());
+
+        // Let's create a day from a string value
+        // (maybe something someone typed in a field)
+        var str = "1995-12-25";
+        var day = moment(str); // this is now a moment date object; not a string
+        console.log(day); 
+
+        // How many days between now and the date created above
+        console.log( now.diff(day,'days') );
+
+      });
+    </script>
+
+  </body>
+</html>
